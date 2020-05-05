@@ -1,8 +1,22 @@
 #include "game1.h"
+#include "ball.h"
 #include <iostream>
 #include "SDL.h"
 
-void Game::Run(Controller const &controller, Renderer &renderer, std::size_t target_frame_duration) {
+const int BALL_WIDTH = 15;
+const int BALL_HEIGHT = 15;
+
+// Game::Game(const std::size_t screen_width, const std::size_t screen_height) {
+//     Ball ball(
+//         Vec2((screen_width / 2.0f) - (BALL_WIDTH / 2.0f),
+// 	(screen_height / 2.0f) - (BALL_HEIGHT / 2.0f)));
+// }
+      
+
+
+
+void Game::Run(Controller const &controller, Renderer &renderer, std::size_t target_frame_duration, 
+               const std::size_t screen_width, const std::size_t screen_height) {
   Uint32 title_timestamp = SDL_GetTicks();
   Uint32 frame_start;
   Uint32 frame_end;
@@ -10,13 +24,17 @@ void Game::Run(Controller const &controller, Renderer &renderer, std::size_t tar
   int frame_count = 0;
   bool running = true;
 
+  Ball ball(
+    Vec2((screen_width / 2.0f) - (BALL_WIDTH / 2.0f),
+	(screen_height / 2.0f) - (BALL_HEIGHT / 2.0f)));
+
   while (running) {
     frame_start = SDL_GetTicks();
 
     // Input, Update, Render - the main game loop.
     controller.HandleInput(running);
     // Update();
-    renderer.Render();
+    renderer.Render(screen_width, screen_height, ball);
 
     frame_end = SDL_GetTicks();
 

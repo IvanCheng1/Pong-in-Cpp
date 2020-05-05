@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "SDL.h"
+#include "ball.h"
 
 
 class Renderer {
@@ -10,7 +11,7 @@ class Renderer {
   Renderer(const std::size_t screen_width, const std::size_t screen_height);
   ~Renderer();
 
-  void Render();
+  void Render(const std::size_t screen_width, const std::size_t screen_height, Ball ball);
   void UpdateWindowTitle(int score, int fps);
 
  private:

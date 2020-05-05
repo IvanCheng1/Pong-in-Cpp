@@ -76,13 +76,23 @@ Renderer::~Renderer() {
     }
 }
 */
-void Renderer::Render() {
-  // Clear screen
-  SDL_SetRenderDrawColor(sdl_renderer, 0x0, 0x0, 0x0, 0xFF);
-  SDL_RenderClear(sdl_renderer);
+void Renderer::Render(const std::size_t screen_width, const std::size_t screen_height, Ball ball) {
+    // Clear screen to black
+    SDL_SetRenderDrawColor(sdl_renderer, 0x0, 0x0, 0x0, 0xFF);
+    SDL_RenderClear(sdl_renderer);
 
-  // Update Screen
-  SDL_RenderPresent(sdl_renderer);
+    // draw the white line in the middle
+    SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF); // white
+    for (int y = 0; y < screen_height; y++) {
+        if (y % 5) {
+            SDL_RenderDrawPoint(sdl_renderer, screen_width / 2, y);
+        }
+    }
+
+    ball.Draw(sdl_renderer);
+
+    // Update Screen
+    SDL_RenderPresent(sdl_renderer);
 }
 
 void Renderer::UpdateWindowTitle(int score, int fps) {
