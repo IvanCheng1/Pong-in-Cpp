@@ -7,7 +7,5 @@ class Controller
 {
 public:
     void HandleInput(bool &running, Paddle &paddleOne, Paddle &paddleTwo) const;
-
-private:
 };
 #endif

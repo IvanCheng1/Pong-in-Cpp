@@ -29,16 +29,22 @@ There is a small delay before every round to give players time to get ready. In 
 2. Make a build directory in the top level directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
 4. Run it: `./Pong`.
-5. Use `w`, `s`, `up`, and `down` to controller the paddles.
+5. Use `w`, `s`, `up`, and `down` to control the paddles.
 6. Press the `esc` to quit.
 
 ## Rubric points
 
-
+#### Loops, Functions, I/O
 | Rubric point  | Location |
 | ------------- | ------------- |
-| The project demonstrates an understanding of C++ functions and control structures.  |   All of the files I think!
-|s|s|
+| The project demonstrates an understanding of C++ functions and control structures.  |   All of the files
+|The project accepts input from a user as part of the necessary operation of the program.|`controller.cpp`|
+
+#### Object Oriented Programming
+| Rubric point  | Location |
+| ------------- | ------------- |
+| The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks. | `ball.cpp` `paddle.cpp`
+|All class data members are explicitly specified as public, protected, or private. |`game.cpp` `renderer.cpp`|
 
 ## References
 
