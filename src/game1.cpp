@@ -1,18 +1,17 @@
 #include "game1.h"
 #include "ball.h"
 #include <iostream>
-#include "SDL.h"
+#include "SDL2/SDL.h"
 
-const int BALL_WIDTH = 15;
-const int BALL_HEIGHT = 15;
 
-// Game::Game(const std::size_t screen_width, const std::size_t screen_height) {
-//     Ball ball(
-//         Vec2((screen_width / 2.0f) - (BALL_WIDTH / 2.0f),
-// 	(screen_height / 2.0f) - (BALL_HEIGHT / 2.0f)));
-// }
+const int PADDLE_HEIGHT = 100;
+
+Game::Game(const std::size_t screen_width, const std::size_t screen_height) : 
+    ball(screen_width, screen_height), 
+    paddleOne(50.0f, screen_height), 
+    paddleTwo(screen_width - 50.0f, screen_height) 
+    {}
       
-
 
 
 void Game::Run(Controller const &controller, Renderer &renderer, std::size_t target_frame_duration, 
@@ -24,18 +23,14 @@ void Game::Run(Controller const &controller, Renderer &renderer, std::size_t tar
   int frame_count = 0;
   bool running = true;
 
-  Ball ball(
-    Vec2((screen_width / 2.0f) - (BALL_WIDTH / 2.0f),
-	(screen_height / 2.0f) - (BALL_HEIGHT / 2.0f)));
 
   while (running) {
     frame_start = SDL_GetTicks();
 
     // Input, Update, Render - the main game loop.
-    controller.HandleInput(running);
+    controller.HandleInput(running, paddleOne, paddleTwo);
     // Update();
-    renderer.Render(screen_width, screen_height, ball);
-
+    renderer.Render(screen_width, screen_height, ball, paddleOne, paddleTwo);
     frame_end = SDL_GetTicks();
 
     // Keep track of how long each loop through the input/update/render cycle

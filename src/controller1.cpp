@@ -1,15 +1,12 @@
 #include "controller1.h"
 #include <iostream>
-#include "SDL.h"
-// #include "snake.h"
+#include "SDL2/SDL.h"
+#include "ball.h"
 
-// void Controller::ChangeDirection(Snake &snake, Snake::Direction input,
-//                                  Snake::Direction opposite) const {
-//   if (snake.direction != opposite || snake.size == 1) snake.direction = input;
-//   return;
-// }
 
-void Controller::HandleInput(bool &running) const {
+const Uint8 *keys = SDL_GetKeyboardState(NULL);
+
+void Controller::HandleInput(bool &running, Paddle &paddleOne, Paddle &paddleTwo) const {
     SDL_Event e;
     while (SDL_PollEvent(&e)) {
         if (e.type == SDL_QUIT) {
@@ -19,25 +16,43 @@ void Controller::HandleInput(bool &running) const {
                 case SDLK_ESCAPE:
                     running = false;
                     break;
-                // case SDLK_UP:
-                //     ChangeDirection(snake, Snake::Direction::kUp,
-                //                     Snake::Direction::kDown);
-                //     break;
+                case SDLK_UP:
+                    paddleTwo.velocity.y = -paddleTwo.Paddle_speed;
+                    break;
+                case SDLK_DOWN:
+                    paddleTwo.velocity.y = paddleTwo.Paddle_speed;
+                    break;
+                case SDLK_w:
+                    paddleOne.velocity.y = -paddleOne.Paddle_speed;
+                    break;
+                case SDLK_s:
+                    paddleOne.velocity.y = paddleOne.Paddle_speed;
+                    break;
 
-                // case SDLK_DOWN:
-                //     ChangeDirection(snake, Snake::Direction::kDown,
-                //                     Snake::Direction::kUp);
-                //     break;
+            }
+        } else if (e.type == SDL_KEYUP) {
+            switch (e.key.keysym.sym) {
+                case SDLK_UP:
+                    if (keys[SDL_SCANCODE_DOWN]) {
+                        paddleTwo.velocity.y = paddleTwo.Paddle_speed;
+                    } else {paddleTwo.velocity.y = 0;}
+                    break;
+                case SDLK_DOWN:
+                    if (keys[SDL_SCANCODE_UP]) {
+                        paddleTwo.velocity.y = -paddleTwo.Paddle_speed;
+                    } else {paddleTwo.velocity.y = 0;}
+                    break;
+                case SDLK_w:
+                    if (keys[SDL_SCANCODE_S]) {
+                        paddleOne.velocity.y = paddleOne.Paddle_speed;
+                    } else {paddleOne.velocity.y = 0;}
+                    break;
+                case SDLK_s:
+                    if (keys[SDL_SCANCODE_W]) {
+                        paddleOne.velocity.y = -paddleOne.Paddle_speed;
+                    } else {paddleOne.velocity.y = 0;}
+                    break;
 
-                // case SDLK_LEFT:
-                //     ChangeDirection(snake, Snake::Direction::kLeft,
-                //                     Snake::Direction::kRight);
-                //     break;
-
-                // case SDLK_RIGHT:
-                //     ChangeDirection(snake, Snake::Direction::kRight,
-                //                     Snake::Direction::kLeft);
-                //     break;
             }
         }
   }

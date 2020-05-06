@@ -2,20 +2,24 @@
 #define GAME_H
 
 // #include <random>
-#include "SDL.h"
+#include "SDL2/SDL.h"
 #include "controller1.h"
 #include "renderer1.h"
+#include "score.h"
 #include "ball.h"
 
 class Game {
     public:
-        // Game(const std::size_t screen_width, const std::size_t screen_height);
+        Game(const std::size_t screen_width, const std::size_t screen_height);
         void Run(Controller const &controller, Renderer &renderer, std::size_t target_frame_duration,
              const std::size_t screen_width, const std::size_t screen_height);
         // int GetScore() const;
 
     private:
-        // Ball ball;
+        Ball ball;
+        Paddle paddleOne;
+        Paddle paddleTwo;
+
 
         // std::random_device dev;
         // std::mt19937 engine;

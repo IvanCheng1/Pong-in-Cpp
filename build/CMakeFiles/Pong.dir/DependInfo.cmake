@@ -9,13 +9,15 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src/game1.cpp" "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/build/CMakeFiles/Pong.dir/src/game1.cpp.o"
   "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src/main1.cpp" "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/build/CMakeFiles/Pong.dir/src/main1.cpp.o"
   "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src/renderer1.cpp" "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/build/CMakeFiles/Pong.dir/src/renderer1.cpp.o"
+  "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src/score.cpp" "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/build/CMakeFiles/Pong.dir/src/score.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/usr/local/Cellar/sdl2/2.0.12_1/include/SDL2"
+  "/Library/Frameworks/SDL2.framework/Headers"
   "../src"
+  "../include"
   )
 
 # Targets to which this target links.

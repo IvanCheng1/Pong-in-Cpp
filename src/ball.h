@@ -2,55 +2,78 @@
 #define BALL_H
 
 #include <vector>
-#include "SDL.h"
+#include "SDL2/SDL.h"
 
 class Vec2 {
-    public:
-        Vec2() : _x(0.0f), _y(0.0f) {}
-        Vec2(float x, float y) : _x(x), _y(y) {}
+public:
+    Vec2() : x(0.0f), y(0.0f) {}
+    Vec2(float x, float y) : x(x), y(y) {}
 
-        Vec2 operator+(Vec2 const& other);
+    Vec2 operator+(Vec2 const& other);
 
-        Vec2& operator+=(Vec2 const& other);
+    Vec2& operator+=(Vec2 const& other);
 
-        Vec2 operator*(float other);
+    Vec2 operator*(float other);
 
-        float get_x() const { return _x; }
-        float get_y() const { return _y; }
 
-    private:
-        float _x;
-        float _y;
+
+
+    float x;
+    float y;
 
 };
 
 class Ball {
-    public:
-        const int BALL_WIDTH = 15;
-        const int BALL_HEIGHT = 15;
+public:
+    const int Ball_w = 15;
+    const int Ball_h = 15;
 
-        // Ball(const std::size_t screen_width, const std::size_t screen_height)
-        //   : grid_width(grid_width),
-        //     grid_height(grid_height),
-        //     head_x(grid_width / 2),
-        //     head_y(grid_height / 2) {}
-
-
-
-        Ball(Vec2 position) : position(position)
+    Ball(const std::size_t screen_width, const std::size_t screen_height) : 
+        position(Vec2((screen_width / 2.0f) - (Ball_w / 2.0f),
+                (screen_height / 2.0f) - (Ball_h / 2.0f))) 
         {
-            rect.x = static_cast<int>(position.get_x());
-            rect.y = static_cast<int>(position.get_y());
-            rect.w = BALL_WIDTH;
-            rect.h = BALL_HEIGHT;
+        rect.x = static_cast<int>(position.x);
+        rect.y = static_cast<int>(position.y);
+        rect.w = Ball_w;
+        rect.h = Ball_h;
         }
 
-        void Draw(SDL_Renderer* renderer);
 
-        Vec2 position;
-        SDL_Rect rect{};
+    void Draw(SDL_Renderer* renderer);
+
+    Vec2 position;
+    SDL_Rect rect{};
     
 };
+
+
+class Paddle{
+public:
+    const int Paddle_w = 10;
+    const int Paddle_h = 100;
+
+    Paddle(float x, std::size_t screen_height) : position(Vec2(x, (screen_height / 2.0f) - (Paddle_h / 2.0f)))
+    {
+    screen_h = screen_height;
+    rect.x = static_cast<int>(position.x);
+    rect.y = static_cast<int>(position.y);
+    rect.w = Paddle_w;
+    rect.h = Paddle_h;
+    }
+
+    void Update();
+
+    void Draw(SDL_Renderer* renderer);
+
+    Vec2 position;
+    Vec2 velocity;
+    SDL_Rect rect{};
+    std::size_t screen_h;
+    float Paddle_speed = 1;
+
+
+};
+
 
 
 #endif

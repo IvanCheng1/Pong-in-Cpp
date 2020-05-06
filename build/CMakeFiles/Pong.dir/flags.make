@@ -6,5 +6,5 @@ CXX_FLAGS =  -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacO
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/Cellar/sdl2/2.0.12_1/include/SDL2 -I/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src 
+CXX_INCLUDES = -I/Library/Frameworks/SDL2.framework/Headers -I/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src -I/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/include 
 

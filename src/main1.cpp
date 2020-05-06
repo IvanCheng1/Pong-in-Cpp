@@ -1,6 +1,6 @@
 #include "renderer1.h"
 #include <iostream>
-#include "SDL.h"
+#include "SDL2/SDL.h"
 #include "controller1.h"
 #include "game1.h"
 #include <thread>
@@ -14,7 +14,7 @@ int main() {
 
     Renderer renderer(kScreenWidth, kScreenHeight);
     Controller controller;
-    Game game;
+    Game game(kScreenWidth, kScreenHeight);
     game.Run(controller, renderer, kMsPerFrame, kScreenWidth, kScreenHeight);
 
 

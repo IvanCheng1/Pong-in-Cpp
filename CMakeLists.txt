@@ -4,14 +4,15 @@ add_definitions(-std=c++17)
 
 set(CXX_FLAGS "-Wall")
 set(CMAKE_CXX_FLAGS, "${CXX_FLAGS}")
+project(Pong)
 
-project(SDL2Test)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
 find_package(SDL2 REQUIRED)
-include_directories(${SDL2_INCLUDE_DIRS} src)
+include_directories(${SDL2_INCLUDE_DIR} src include)
 
-add_executable(Pong src/main1.cpp src/renderer1.cpp src/controller1.cpp src/game1.cpp src/ball.cpp)
+
+add_executable(Pong src/main1.cpp src/renderer1.cpp src/controller1.cpp src/game1.cpp src/ball.cpp src/score.cpp)
 string(STRIP ${SDL2_LIBRARIES} SDL2_LIBRARIES)
 target_link_libraries(Pong ${SDL2_LIBRARIES})

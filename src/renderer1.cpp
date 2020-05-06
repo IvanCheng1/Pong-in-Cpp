@@ -1,6 +1,8 @@
 #include <renderer1.h>
 #include <string>
 #include <iostream>
+#include "score.h"
+#include "ball.h"
 
 
 Renderer::Renderer(const std::size_t screen_width,
@@ -12,6 +14,7 @@ Renderer::Renderer(const std::size_t screen_width,
     std::cerr << "SDL could not initialize.\n";
     std::cerr << "SDL_Error: " << SDL_GetError() << "\n";
   }
+
 
   // Create Window
   sdl_window = SDL_CreateWindow("Pong", SDL_WINDOWPOS_CENTERED,
@@ -29,6 +32,7 @@ Renderer::Renderer(const std::size_t screen_width,
     std::cerr << "Renderer could not be created.\n";
     std::cerr << "SDL_Error: " << SDL_GetError() << "\n";
   }
+  
 
   std::cout << "SDL init complete" << std::endl;
 }
@@ -38,45 +42,8 @@ Renderer::~Renderer() {
   SDL_Quit();
   std::cout << "SDL Destroyed" << std::endl;
 }
-/*
-// Game logic
-{
-    bool running = true;
 
-    // Continue looping and processing events until user exits
-    while (running)
-    {
-        SDL_Event event;
-        while (SDL_PollEvent(&event))
-        {
-            if (event.type == SDL_QUIT)
-            {
-                running = false;
-            }
-            else if (event.type == SDL_KEYDOWN)
-            {
-                if (event.key.keysym.sym == SDLK_ESCAPE)
-                {
-                    running = false;
-                }
-            }
-        }
-
-        // Clear the window to black
-        SDL_SetRenderDrawColor(renderer, 0x0, 0x0, 0x0, 0xFF);
-        SDL_RenderClear(renderer);
-
-        //
-        // Rendering will happen here
-        //
-
-        
-        // Present the backbuffer
-        SDL_RenderPresent(renderer);
-    }
-}
-*/
-void Renderer::Render(const std::size_t screen_width, const std::size_t screen_height, Ball ball) {
+void Renderer::Render(const std::size_t screen_width, const std::size_t screen_height, Ball ball, Paddle &paddleOne, Paddle &paddleTwo) {
     // Clear screen to black
     SDL_SetRenderDrawColor(sdl_renderer, 0x0, 0x0, 0x0, 0xFF);
     SDL_RenderClear(sdl_renderer);
@@ -88,9 +55,17 @@ void Renderer::Render(const std::size_t screen_width, const std::size_t screen_h
             SDL_RenderDrawPoint(sdl_renderer, screen_width / 2, y);
         }
     }
-
+    // draw ball
     ball.Draw(sdl_renderer);
 
+    // draw paddles
+    paddleOne.Draw(sdl_renderer);
+    paddleTwo.Draw(sdl_renderer);
+    
+    paddleOne.Update();
+    paddleTwo.Update();
+
+ 
     // Update Screen
     SDL_RenderPresent(sdl_renderer);
 }
