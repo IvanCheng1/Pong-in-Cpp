@@ -56,9 +56,11 @@ void Renderer::Render(const std::size_t screen_width, const std::size_t screen_h
             SDL_RenderDrawPoint(sdl_renderer, screen_width / 2, y);
         }
     }
+    SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0x00, 0xFF); // yellow 
     // draw ball
     ball.Draw(sdl_renderer);
 
+    SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF); // white
     // draw paddles
     paddleOne.Draw(sdl_renderer);
     paddleTwo.Draw(sdl_renderer);
