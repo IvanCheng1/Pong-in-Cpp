@@ -4,8 +4,6 @@
 #include "controller.h"
 #include "game.h"
 
-// https://austinmorlan.com/posts/pong_clone/
-
 int main()
 {
     constexpr std::size_t kFramesPerSecond{60};
