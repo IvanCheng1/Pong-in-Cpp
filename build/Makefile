@@ -170,140 +170,140 @@ src/ball.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/ball.cpp.s
 .PHONY : src/ball.cpp.s
 
-src/controller1.o: src/controller1.cpp.o
+src/controller.o: src/controller.cpp.o
 
-.PHONY : src/controller1.o
-
-# target to build an object file
-src/controller1.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/controller1.cpp.o
-.PHONY : src/controller1.cpp.o
-
-src/controller1.i: src/controller1.cpp.i
-
-.PHONY : src/controller1.i
-
-# target to preprocess a source file
-src/controller1.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/controller1.cpp.i
-.PHONY : src/controller1.cpp.i
-
-src/controller1.s: src/controller1.cpp.s
-
-.PHONY : src/controller1.s
-
-# target to generate assembly for a file
-src/controller1.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/controller1.cpp.s
-.PHONY : src/controller1.cpp.s
-
-src/game1.o: src/game1.cpp.o
-
-.PHONY : src/game1.o
+.PHONY : src/controller.o
 
 # target to build an object file
-src/game1.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/game1.cpp.o
-.PHONY : src/game1.cpp.o
+src/controller.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/controller.cpp.o
+.PHONY : src/controller.cpp.o
 
-src/game1.i: src/game1.cpp.i
+src/controller.i: src/controller.cpp.i
 
-.PHONY : src/game1.i
+.PHONY : src/controller.i
 
 # target to preprocess a source file
-src/game1.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/game1.cpp.i
-.PHONY : src/game1.cpp.i
+src/controller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/controller.cpp.i
+.PHONY : src/controller.cpp.i
 
-src/game1.s: src/game1.cpp.s
+src/controller.s: src/controller.cpp.s
 
-.PHONY : src/game1.s
+.PHONY : src/controller.s
 
 # target to generate assembly for a file
-src/game1.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/game1.cpp.s
-.PHONY : src/game1.cpp.s
+src/controller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/controller.cpp.s
+.PHONY : src/controller.cpp.s
 
-src/main1.o: src/main1.cpp.o
+src/game.o: src/game.cpp.o
 
-.PHONY : src/main1.o
+.PHONY : src/game.o
 
 # target to build an object file
-src/main1.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/main1.cpp.o
-.PHONY : src/main1.cpp.o
+src/game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/game.cpp.o
+.PHONY : src/game.cpp.o
 
-src/main1.i: src/main1.cpp.i
+src/game.i: src/game.cpp.i
 
-.PHONY : src/main1.i
+.PHONY : src/game.i
 
 # target to preprocess a source file
-src/main1.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/main1.cpp.i
-.PHONY : src/main1.cpp.i
+src/game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/game.cpp.i
+.PHONY : src/game.cpp.i
 
-src/main1.s: src/main1.cpp.s
+src/game.s: src/game.cpp.s
 
-.PHONY : src/main1.s
+.PHONY : src/game.s
 
 # target to generate assembly for a file
-src/main1.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/main1.cpp.s
-.PHONY : src/main1.cpp.s
+src/game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/game.cpp.s
+.PHONY : src/game.cpp.s
 
-src/renderer1.o: src/renderer1.cpp.o
+src/main.o: src/main.cpp.o
 
-.PHONY : src/renderer1.o
+.PHONY : src/main.o
 
 # target to build an object file
-src/renderer1.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/renderer1.cpp.o
-.PHONY : src/renderer1.cpp.o
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-src/renderer1.i: src/renderer1.cpp.i
+src/main.i: src/main.cpp.i
 
-.PHONY : src/renderer1.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-src/renderer1.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/renderer1.cpp.i
-.PHONY : src/renderer1.cpp.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-src/renderer1.s: src/renderer1.cpp.s
+src/main.s: src/main.cpp.s
 
-.PHONY : src/renderer1.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-src/renderer1.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/renderer1.cpp.s
-.PHONY : src/renderer1.cpp.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
-src/score.o: src/score.cpp.o
+src/paddle.o: src/paddle.cpp.o
 
-.PHONY : src/score.o
+.PHONY : src/paddle.o
 
 # target to build an object file
-src/score.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/score.cpp.o
-.PHONY : src/score.cpp.o
+src/paddle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/paddle.cpp.o
+.PHONY : src/paddle.cpp.o
 
-src/score.i: src/score.cpp.i
+src/paddle.i: src/paddle.cpp.i
 
-.PHONY : src/score.i
+.PHONY : src/paddle.i
 
 # target to preprocess a source file
-src/score.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/score.cpp.i
-.PHONY : src/score.cpp.i
+src/paddle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/paddle.cpp.i
+.PHONY : src/paddle.cpp.i
 
-src/score.s: src/score.cpp.s
+src/paddle.s: src/paddle.cpp.s
 
-.PHONY : src/score.s
+.PHONY : src/paddle.s
 
 # target to generate assembly for a file
-src/score.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/score.cpp.s
-.PHONY : src/score.cpp.s
+src/paddle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/paddle.cpp.s
+.PHONY : src/paddle.cpp.s
+
+src/renderer.o: src/renderer.cpp.o
+
+.PHONY : src/renderer.o
+
+# target to build an object file
+src/renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/renderer.cpp.o
+.PHONY : src/renderer.cpp.o
+
+src/renderer.i: src/renderer.cpp.i
+
+.PHONY : src/renderer.i
+
+# target to preprocess a source file
+src/renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/renderer.cpp.i
+.PHONY : src/renderer.cpp.i
+
+src/renderer.s: src/renderer.cpp.s
+
+.PHONY : src/renderer.s
+
+# target to generate assembly for a file
+src/renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/renderer.cpp.s
+.PHONY : src/renderer.cpp.s
 
 # Help Target
 help:
@@ -317,21 +317,21 @@ help:
 	@echo "... src/ball.o"
 	@echo "... src/ball.i"
 	@echo "... src/ball.s"
-	@echo "... src/controller1.o"
-	@echo "... src/controller1.i"
-	@echo "... src/controller1.s"
-	@echo "... src/game1.o"
-	@echo "... src/game1.i"
-	@echo "... src/game1.s"
-	@echo "... src/main1.o"
-	@echo "... src/main1.i"
-	@echo "... src/main1.s"
-	@echo "... src/renderer1.o"
-	@echo "... src/renderer1.i"
-	@echo "... src/renderer1.s"
-	@echo "... src/score.o"
-	@echo "... src/score.i"
-	@echo "... src/score.s"
+	@echo "... src/controller.o"
+	@echo "... src/controller.i"
+	@echo "... src/controller.s"
+	@echo "... src/game.o"
+	@echo "... src/game.i"
+	@echo "... src/game.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/paddle.o"
+	@echo "... src/paddle.i"
+	@echo "... src/paddle.s"
+	@echo "... src/renderer.o"
+	@echo "... src/renderer.i"
+	@echo "... src/renderer.s"
 .PHONY : help
 
 

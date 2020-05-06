@@ -13,6 +13,6 @@ find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIR} src include)
 
 
-add_executable(Pong src/main1.cpp src/renderer1.cpp src/controller1.cpp src/game1.cpp src/ball.cpp src/score.cpp)
+add_executable(Pong src/main.cpp src/renderer.cpp src/controller.cpp src/game.cpp src/ball.cpp src/paddle.cpp)
 string(STRIP ${SDL2_LIBRARIES} SDL2_LIBRARIES)
 target_link_libraries(Pong ${SDL2_LIBRARIES})

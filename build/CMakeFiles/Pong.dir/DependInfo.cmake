@@ -5,11 +5,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src/ball.cpp" "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/build/CMakeFiles/Pong.dir/src/ball.cpp.o"
-  "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src/controller1.cpp" "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/build/CMakeFiles/Pong.dir/src/controller1.cpp.o"
-  "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src/game1.cpp" "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/build/CMakeFiles/Pong.dir/src/game1.cpp.o"
-  "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src/main1.cpp" "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/build/CMakeFiles/Pong.dir/src/main1.cpp.o"
-  "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src/renderer1.cpp" "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/build/CMakeFiles/Pong.dir/src/renderer1.cpp.o"
-  "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src/score.cpp" "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/build/CMakeFiles/Pong.dir/src/score.cpp.o"
+  "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src/controller.cpp" "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/build/CMakeFiles/Pong.dir/src/controller.cpp.o"
+  "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src/game.cpp" "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/build/CMakeFiles/Pong.dir/src/game.cpp.o"
+  "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src/main.cpp" "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/build/CMakeFiles/Pong.dir/src/main.cpp.o"
+  "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src/paddle.cpp" "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/build/CMakeFiles/Pong.dir/src/paddle.cpp.o"
+  "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src/renderer.cpp" "/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/build/CMakeFiles/Pong.dir/src/renderer.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

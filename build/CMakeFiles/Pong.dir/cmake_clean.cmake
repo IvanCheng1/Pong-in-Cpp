@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Pong.dir/src/ball.cpp.o"
-  "CMakeFiles/Pong.dir/src/controller1.cpp.o"
-  "CMakeFiles/Pong.dir/src/game1.cpp.o"
-  "CMakeFiles/Pong.dir/src/main1.cpp.o"
-  "CMakeFiles/Pong.dir/src/renderer1.cpp.o"
-  "CMakeFiles/Pong.dir/src/score.cpp.o"
+  "CMakeFiles/Pong.dir/src/controller.cpp.o"
+  "CMakeFiles/Pong.dir/src/game.cpp.o"
+  "CMakeFiles/Pong.dir/src/main.cpp.o"
+  "CMakeFiles/Pong.dir/src/paddle.cpp.o"
+  "CMakeFiles/Pong.dir/src/renderer.cpp.o"
   "Pong"
   "Pong.pdb"
 )
