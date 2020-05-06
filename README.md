@@ -45,6 +45,7 @@ There is a small delay before every round to give players time to get ready. In 
 | ------------- | ------------- |
 | The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks. | `ball.cpp` `paddle.cpp`
 |All class data members are explicitly specified as public, protected, or private. |`game.cpp` `renderer.cpp`|
+|All class members that are set to argument values are initialized through member initialization lists.|`ball.cpp` `controller.cpp`|
 
 ## References
 
