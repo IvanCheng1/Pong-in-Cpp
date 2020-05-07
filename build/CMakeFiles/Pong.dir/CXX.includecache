@@ -629,6 +629,8 @@ ball.h
 /Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src/ball.h
 paddle.h
 /Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src/paddle.h
+SDL2/SDL.h
+/Users/IvanCheng/Documents/GitHub/Pong-in-Cpp/src/SDL2/SDL.h
 random
 -
 

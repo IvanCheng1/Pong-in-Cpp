@@ -2,6 +2,7 @@
 #define CONTROLLER_H
 
 #include "ball.h"
+#include "paddle.h"
 
 class Controller
 {

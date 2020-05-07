@@ -35,6 +35,7 @@ public:
     void Reset();
     void CollisionCheck(Paddle &paddleOne, Paddle &paddleTwo, int &count);
     void DelayStart(Paddle &paddleOne, Paddle &paddleTwo, int &count);
+    void Simulate(Paddle &paddle);
 
     const int Ball_w = 15;
     const int Ball_h = 15;

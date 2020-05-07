@@ -6,8 +6,8 @@ set(CXX_FLAGS "-Wall")
 set(CMAKE_CXX_FLAGS, "${CXX_FLAGS}")
 project(Pong)
 
-
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH})
+
 
 find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIR} src include)

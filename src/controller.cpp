@@ -2,6 +2,7 @@
 #include <iostream>
 #include "SDL2/SDL.h"
 #include "ball.h"
+#include "paddle.h"
 
 const Uint8 *keys = SDL_GetKeyboardState(NULL);
 
@@ -16,16 +17,16 @@ void Controller::HandleInput(bool &running, Paddle &paddleOne, Paddle &paddleTwo
                     running = false;
                     break;
                 case SDLK_UP:
-                    paddleTwo.velocity.y = -paddleTwo.Paddle_speed;
-                    break;
-                case SDLK_DOWN:
-                    paddleTwo.velocity.y = paddleTwo.Paddle_speed;
-                    break;
-                case SDLK_w:
                     paddleOne.velocity.y = -paddleOne.Paddle_speed;
                     break;
-                case SDLK_s:
+                case SDLK_DOWN:
                     paddleOne.velocity.y = paddleOne.Paddle_speed;
+                    break;
+                case SDLK_w:
+                    paddleTwo.velocity.y = -paddleTwo.Paddle_speed;
+                    break;
+                case SDLK_s:
+                    paddleTwo.velocity.y = paddleTwo.Paddle_speed;
                     break;
 
             }
@@ -33,23 +34,23 @@ void Controller::HandleInput(bool &running, Paddle &paddleOne, Paddle &paddleTwo
             switch (e.key.keysym.sym) {
                 case SDLK_UP:
                     if (keys[SDL_SCANCODE_DOWN]) {
-                        paddleTwo.velocity.y = paddleTwo.Paddle_speed;
-                    } else {paddleTwo.velocity.y = 0;}
-                    break;
-                case SDLK_DOWN:
-                    if (keys[SDL_SCANCODE_UP]) {
-                        paddleTwo.velocity.y = -paddleTwo.Paddle_speed;
-                    } else {paddleTwo.velocity.y = 0;}
-                    break;
-                case SDLK_w:
-                    if (keys[SDL_SCANCODE_S]) {
                         paddleOne.velocity.y = paddleOne.Paddle_speed;
                     } else {paddleOne.velocity.y = 0;}
                     break;
-                case SDLK_s:
-                    if (keys[SDL_SCANCODE_W]) {
+                case SDLK_DOWN:
+                    if (keys[SDL_SCANCODE_UP]) {
                         paddleOne.velocity.y = -paddleOne.Paddle_speed;
                     } else {paddleOne.velocity.y = 0;}
+                    break;
+                case SDLK_w:
+                    if (keys[SDL_SCANCODE_S]) {
+                        paddleTwo.velocity.y = paddleTwo.Paddle_speed;
+                    } else {paddleTwo.velocity.y = 0;}
+                    break;
+                case SDLK_s:
+                    if (keys[SDL_SCANCODE_W]) {
+                        paddleTwo.velocity.y = -paddleTwo.Paddle_speed;
+                    } else {paddleTwo.velocity.y = 0;}
                     break;
 
             }

@@ -1,6 +1,7 @@
 #include <iostream>
 #include "ball.h"
 #include "paddle.h"
+#include "SDL2/SDL.h"
 #include <random>
 
 /*---------------- Ball ----------------*/
@@ -12,7 +13,7 @@ Ball::Ball(const std::size_t screen_width, const std::size_t screen_height)
       random_hit(0.85, 1.15),
       random_speed(0.9, 1.1),
       random_y_hit(-0.1, 0.1),
-      random_y_start(0, 1)
+      random_y_start(-0.75, 0.75)
 {
     startPosition = position;
     screen_h = screen_height;
@@ -39,18 +40,21 @@ void Ball::Update(float dt)
 void Ball::PaddleCollide(Contact const &contact)
 {
     this->position.x += contact.penetration;
-    this->velocity.x = -velocity.x * random_speed(engine);
 
     if (contact.type == CollisionType::Top)
     {
         this->velocity.y = -0.75f * Ball_s * random_hit(engine);
+        this->velocity.x = -velocity.x * random_speed(engine) * 1.02;
     }
     else if (contact.type == CollisionType::Bottom)
     {
         this->velocity.y = 0.75f * Ball_s * random_hit(engine);
+        this->velocity.x = -velocity.x * random_speed(engine) * 1.02;
+
     }
     else if (contact.type == CollisionType::Middle)
     {
+        this->velocity.x = -velocity.x * random_speed(engine) * 0.98;
         if (this->velocity.y == 0)
         {
             this->velocity.y = random_y_hit(engine);
@@ -231,5 +235,82 @@ void Ball::DelayStart(Paddle &paddleOne, Paddle &paddleTwo, int &count)
             }
             this->velocity.y = this->random_y_start(this->engine);
         }
+    }
+}
+
+
+void Ball::Simulate(Paddle &paddle)
+{   
+    float ballTop = this->position.y;
+    float ballBottom = this->position.y + this->Ball_h;
+
+    float paddleTop = paddle.position.y;
+    float paddleBottom = paddle.position.y + paddle.Paddle_h;
+    float paddleRangeUpper = paddleBottom - (2.0f * paddle.Paddle_h / 3.0f);
+    float paddleRangeMiddle = paddleBottom - (paddle.Paddle_h / 3.0f);
+
+    const Uint8 *keys = SDL_GetKeyboardState(NULL);
+    SDL_Event sdlevent = {};
+
+    // if (keys[SDL_SCANCODE_W]) {
+    //     sdlevent.type = SDL_KEYUP;
+    //     sdlevent.key.keysym.sym = SDLK_w;
+    //     SDL_PushEvent(&sdlevent);
+    // } else if (keys[SDL_SCANCODE_S]) {
+    //     sdlevent.type = SDL_KEYUP;
+    //     sdlevent.key.keysym.sym = SDLK_s;
+    //     SDL_PushEvent(&sdlevent);
+    // }
+
+    if ((ballBottom > paddleRangeUpper) && (ballBottom < paddleRangeMiddle)) {
+        // release keys
+        // std::cout << "ball is in the middle of paddle!" << std::endl;
+
+
+        sdlevent.type = SDL_KEYUP;
+        sdlevent.key.keysym.sym = SDLK_w;
+
+        sdlevent.key.keysym.sym = SDLK_s;
+        SDL_PushEvent(&sdlevent);
+        
+    } else if ((ballBottom > paddleTop) && (ballBottom < paddleRangeUpper)) {
+        // upper 
+        // std::cout << "ball is in the upper part of paddle!" << std::endl;
+        if (keys[SDL_SCANCODE_W]) {
+            // std::cout << "W is pressed down, releasing" << std::endl;
+            sdlevent.type = SDL_KEYUP;
+            sdlevent.key.keysym.sym = SDLK_w;
+            SDL_PushEvent(&sdlevent);
+        }
+
+    } else if ((ballBottom > paddleRangeMiddle) && (ballBottom < paddleBottom)) {
+        // lower
+        // std::cout << "ball is in the lower part of paddle!" << std::endl;
+        if (keys[SDL_SCANCODE_S]) {
+            // std::cout << "S is pressed down, releasing" << std::endl;
+            sdlevent.type = SDL_KEYUP;
+            sdlevent.key.keysym.sym = SDLK_s;
+            SDL_PushEvent(&sdlevent);
+        }
+
+    } else if (ballBottom < paddleTop) {
+        // above paddle
+        // std::cout << "ball is above the paddle!" << std::endl;
+        if (!keys[SDL_SCANCODE_W]) {
+            // std::cout << "Pressing W" << std::endl;
+            sdlevent.type = SDL_KEYDOWN;
+            sdlevent.key.keysym.sym = SDLK_w;
+            SDL_PushEvent(&sdlevent);
+        }
+    
+    } else if (ballBottom > paddleBottom) {
+        // below paddle
+        // std::cout << "ball is below the paddle!" << std::endl;
+        if (!keys[SDL_SCANCODE_S]) {
+            // std::cout << "Pressing S" << std::endl;
+            sdlevent.type = SDL_KEYDOWN;
+            sdlevent.key.keysym.sym = SDLK_s;
+            SDL_PushEvent(&sdlevent);
+        } 
     }
 }

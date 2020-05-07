@@ -23,14 +23,7 @@ public:
     const int Paddle_w = 10;
     const int Paddle_h = 100;
 
-    Paddle(float x, std::size_t screen_height) : position(Vec2(x, (screen_height / 2.0f) - (Paddle_h / 2.0f)))
-    {
-        screen_h = screen_height;
-        rect.x = static_cast<int>(position.x);
-        rect.y = static_cast<int>(position.y);
-        rect.w = Paddle_w;
-        rect.h = Paddle_h;
-    }
+    Paddle(float x, std::size_t screen_height);
 
     void Update(float dt);
     void Draw(SDL_Renderer *renderer);

@@ -65,6 +65,9 @@ void Renderer::Render(const std::size_t screen_width, const std::size_t screen_h
     paddleOne.Draw(sdl_renderer);
     paddleTwo.Draw(sdl_renderer);
 
+    // simulate computer - remove for two players
+    ball.Simulate(paddleTwo);
+
     // update items on screen
     paddleOne.Update(target_frame_duration);
     paddleTwo.Update(target_frame_duration);
