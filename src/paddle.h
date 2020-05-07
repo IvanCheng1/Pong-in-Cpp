@@ -21,12 +21,13 @@ class Paddle
 {
 public:
     const int Paddle_w = 10;
-    const int Paddle_h = 100;
+    int Paddle_h = 100;
 
     Paddle(float x, std::size_t screen_height);
 
     void Update(float dt);
     void Draw(SDL_Renderer *renderer);
+    void SizeUpdate(Paddle otherPaddle);
 
     Vec2 position;
     Vec2 velocity;

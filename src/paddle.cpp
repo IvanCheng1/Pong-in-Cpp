@@ -35,6 +35,7 @@ Paddle::Paddle(float x, std::size_t screen_height)
 
 void Paddle::Update(float dt)
 {
+    this->rect.h = this->Paddle_h;
     position += velocity * dt;
     if (position.y < 0)
     {
@@ -53,4 +54,26 @@ void Paddle::Draw(SDL_Renderer *renderer)
     SDL_RenderFillRect(renderer, &rect);
 }
 
-
+void Paddle::SizeUpdate(Paddle otherPaddle) {
+    
+    int scoreDif = this->score - otherPaddle.score;
+    if (scoreDif > 3) {
+        if (this->Paddle_h > 60) {
+            this->Paddle_h = this->Paddle_h * 0.97;
+        }
+    } else if (scoreDif < -3) {
+        if (this->Paddle_h < 160) {
+            this->Paddle_h = this->Paddle_h * 1.05;
+        }
+    } else if (scoreDif < 3 && scoreDif > -3) {
+        if (this->Paddle_h > 110) {
+            this->Paddle_h = this->Paddle_h * 0.9;
+        } else if (this->Paddle_h < 90) {
+            this->Paddle_h = this->Paddle_h * 1.1;
+        } else if (this->Paddle_h == 100) {
+            return;
+        } else if (this->Paddle_h > 90 && this->Paddle_h < 110) {
+            this->Paddle_h = 100;
+        } 
+    }
+}

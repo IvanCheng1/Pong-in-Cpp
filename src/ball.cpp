@@ -221,6 +221,10 @@ void Ball::DelayStart(Paddle &paddleOne, Paddle &paddleTwo, int &count)
         count++;
         if (count > 50)
         {
+            // update paddle size
+            paddleOne.SizeUpdate(paddleTwo);
+            paddleTwo.SizeUpdate(paddleOne);
+
             if (paddleOne.score == 0 && paddleTwo.score == 0)
             {
                 // always goes to the right at the start
