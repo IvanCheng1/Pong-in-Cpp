@@ -4,7 +4,7 @@ Final Project for [Udacity C++ Nanodegree Program](https://www.udacity.com/cours
 
 <img src="Pong.gif"/>
 
-This is a two-player game where the left-hand side player uses the keys `w` and `s`, and the right-hand side player uses the `up` and `down` arrow keys. Currently, it is setup as a single player game, where the right-hand side player is played by the computer. 
+This is a two-player game where the left-hand side player uses the keys `w` and `s`, and the right-hand side player uses the `up` and `down` arrow keys. Currently, it is setup as a single player game, where the left-hand side player is played by the computer. 
 
 There is a small delay before every round to give players time to get ready. In the very first round, the ball will head directly towards the right-hand side player. Every round after that, the direction of the ball heads towards the player who won the last round and at a random angle. 
 
@@ -30,7 +30,7 @@ There is a small delay before every round to give players time to get ready. In 
 3. Compile: `cmake .. && make`
 4. Run it: `./Pong`.
 5. Use `up` and `down` to control the right-hand side paddle.
-6. In order to play with two players, please delete line 69 in `renderer.cpp`. Left-hand side player uses `w` and `s` to control the paddle.
+6. In order to play with two players, please delete line 69 from `renderer.cpp`. Left-hand side player uses `w` and `s` to control the paddle.
 7. Press the `esc` to quit.
 
 ## Rubric points
