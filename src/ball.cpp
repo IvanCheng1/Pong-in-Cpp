@@ -224,7 +224,11 @@ void Ball::DelayStart(Paddle &paddleOne, Paddle &paddleTwo, int &count)
                 return;
             }
             // not the start game, reverse ball direction, and random y value
-            this->velocity.x = -this->p_velocity.x;
+            if (abs(this->p_velocity.x) > 0.9) { // if ball is too quick, dampen
+                this->velocity.x = -this->p_velocity.x * 0.9;
+            } else {
+                this->velocity.x = -this->p_velocity.x;
+            }
             this->velocity.y = this->random_y_start(this->engine);
         }
     }
