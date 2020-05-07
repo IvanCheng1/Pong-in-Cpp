@@ -6,7 +6,7 @@ Final Project for [Udacity C++ Nanodegree Program](https://www.udacity.com/cours
 
 This is a two-player game where the left-hand side player uses the keys `w` and `s`, and the right-hand side player uses the `up` and `down` arrow keys. Currently, it is setup as a single player game, where the left-hand side player is played by the computer. 
 
-There is a small delay before every round to give players time to get ready. In the very first round, the ball will head directly towards the right-hand side player. Every round after that, the direction of the ball heads towards the player who won the last round and at a random angle. 
+There is a small delay before every round to give players time to get ready. In the very first round, the ball will head directly towards the right-hand side player. Every round after that, the direction of the ball heads towards the player who won the last round and at a random angle. The paddle size will change depending on the score difference at the start of each round.
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
